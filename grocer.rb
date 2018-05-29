@@ -20,8 +20,8 @@ def consolidate_cart(cart)
       else 
         cart["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[name][:clearance], :count => 1}
       end
-      remaining = cart[name][:count] - coupon[:num]
-      cart[name][:count] = remaining
+      rest = cart[name][:count] - coupon[:num]
+      cart[name][:count] = rest
     end
   end
   cart
